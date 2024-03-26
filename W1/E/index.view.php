@@ -30,7 +30,7 @@
     </ul>
     
 
-    <!-- Legacy Code ----------------------
+    <!-- Legacy Code - Dynamic 
     <?php foreach ($task as $heading => $value) : ?>
         <li>
             <strong><?= ucwords($heading); ?>: </strong> <?= $value; ?>
