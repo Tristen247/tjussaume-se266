@@ -24,11 +24,32 @@
     </li>
 
     <li>
-        <strong>Status: </strong> <?= $task['completed'] ? 'Complete' : 'Incomplete';?>
+        <strong>Complete: </strong> 
+
+        <?php if ($task["completed"]) : ?>
+            <span class="icon">&#9989;</span> <!--display green check if complete-->
+        <?php else : ?>
+            <span class="icon">&#10060;</span><!--else red X-->
+        <?php endif; ?>
+    </li>
+
+    <li>
+        <strong>Started: </strong> 
+
+        <?php if ($task["started"]) : ?> 
+            <span class="icon">&#9989;</span><!--display green check if started-->
+        <?php else : ?>
+            <span class="icon">&#10060;</span><!--else red X-->
+        <?php endif; ?>
     </li>
 
     </ul>
     
+
+
+
+
+
 
     <!-- Legacy Code - Dynamic 
     <?php foreach ($task as $heading => $value) : ?>

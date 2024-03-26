@@ -4,7 +4,8 @@ $task = [
     'title' => 'W1 mini tasks',
     'due' => 'friday',
     'assigned_to' => 'me',
-    'completed' => false
+    'completed' => false,
+    'started' => true
 ];
 
 require 'index.view.php'
