@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <a href="W1/C/">Mini task C</a>
     
 </body>
 </html>
