@@ -1,0 +1,30 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+
+
+body {
+    padding: auto;
+    margin-left:auto;
+    
+}
+
+#btn-links {
+    padding-left: 40px;
+    padding-right: 40px;
+    
+    margin-left:4%;
+}
+
+.project-headings {
+    padding-left: 20px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* This will push the button to the bottom */
+    height: 100%; /* Make sure .card-body takes full height of the .card */
+  }
