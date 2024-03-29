@@ -14,7 +14,7 @@
         
         <div class="row">
             <div class="col-lg-4 col-md-6 col-12 pb-5">
-                <div class="card" style="width: 20rem">
+                <div class="card">
                     <img src="../images/php_logo2.png" class="card-img-top" alt="php-logo">
                     <div class="card-body">
                       <h5 class="card-title">Week 1 - Mini Projects</h5>
@@ -23,58 +23,102 @@
                     </div>
                 </div>
             </div>
-
+        
             <div class="col-lg-4 col-md-6 col-12 pb-5">
-                <div class="card" style="width: 20rem; height: 500px">
+                <div class="card">
                     <img src="../images/php_logo2.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Week 2 - PHP Portfolio</h5>
-                      <p class="card-text">build a php projrct home page</p>
+                      <h5 class="card-title">Week 2 - PHP Home Page</h5>
+                      <p class="card-text">build a php project home page</p>
                       <a href="#" class="btn btn-dark">View Project</a>
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-6 col-12 pb-5">
-                <div class="card" style="width: 20rem;">
+                <div class="card">
                     <img src="../images/php_logo2.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Week 4 - Camp Crystal Lake</h5>
-                      <p class="card-text">Analyze a Figma design and recreate the best of our ablity. CSS and HTML only.</p>
-                      <a href="#" class="btn btn-dark">Go somewhere</a>
+                      <h5 class="card-title">Week 3</h5>
+                      <p class="card-text"><Strong>Coming soon!</Strong></p>
+                      <a href="#" class="btn btn-dark">View Project</a>
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-6 col-12 pb-5">
-                <div class="card" style="width: 20rem;">
+                <div class="card">
                     <img src="../images/php_logo2.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Week 4 - Camp Crystal Lake</h5>
-                      <p class="card-text">Analyze a Figma design and recreate the best of our ablity. CSS and HTML only.</p>
-                      <a href="#" class="btn btn-dark">Go somewhere</a>
+                      <h5 class="card-title">Week 4</h5>
+                      <p class="card-text"><Strong>Coming soon!</Strong></p>
+                      <a href="#" class="btn btn-dark">View Project</a>
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-6 col-12 pb-5">
-                <div class="card" style="width: 20rem;">
+                <div class="card">
                     <img src="../images/php_logo2.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Week 4 - Camp Crystal Lake</h5>
-                      <p class="card-text">Analyze a Figma design and recreate the best of our ablity. CSS and HTML only.</p>
-                      <a href="#" class="btn btn-dark">Go somewhere</a>
+                      <h5 class="card-title">Week 5</h5>
+                      <p class="card-text"><Strong>Coming soon!</Strong></p>
+                      <a href="#" class="btn btn-dark">View Project</a>
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-6 col-12 pb-5">
-                <div class="card" style="width: 20rem;">
+                <div class="card">
                     <img src="../images/php_logo2.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Week 4 - Camp Crystal Lake</h5>
-                      <p class="card-text">Analyze a Figma design and recreate the best of our ablity. CSS and HTML only.</p>
-                      <a href="#" class="btn btn-dark">Go somewhere</a>
+                      <h5 class="card-title">Week 6</h5>
+                      <p class="card-text"><Strong>Coming soon!</Strong></p>
+                      <a href="#" class="btn btn-dark">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12 pb-5">
+                <div class="card">
+                    <img src="../images/php_logo2.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Week 7</h5>
+                      <p class="card-text"><Strong>Coming soon!</Strong></p>
+                      <a href="#" class="btn btn-dark">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12 pb-5">
+                <div class="card">
+                    <img src="../images/php_logo2.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Week 8</h5>
+                      <p class="card-text"><Strong>Coming soon!</Strong></p>
+                      <a href="#" class="btn btn-dark">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12 pb-5">
+                <div class="card">
+                    <img src="../images/php_logo2.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Week 9</h5>
+                      <p class="card-text"><Strong>Coming soon!</Strong></p>
+                      <a href="#" class="btn btn-dark">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12 pb-5">
+                <div class="card">
+                    <img src="../images/php_logo2.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Week 10</h5>
+                      <p class="card-text"><Strong>Coming soon!</Strong></p>
+                      <a href="#" class="btn btn-dark">View Project</a>
                     </div>
                 </div>
             </div>
@@ -83,10 +127,6 @@
         </div>
     </div>
 
-
-    
-    
-        
     
         
       <?php include __DIR__ . '/../include/footer.php'; ?>
