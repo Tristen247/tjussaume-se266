@@ -1,9 +1,9 @@
 <?php include __DIR__ . '/../include/header.php'; ?>
     
-    <h1 class="project-headings">PHP, MySQL, and More! - TJ</h1>
-    <p class="project-headings">
-    Welcome to my PHP and MySQL page. You can find an overview of all my working PHP projects along with my code.
-    </p>
+    <h1 class="project-headings">PHP, MySQL, and More! From SE266
+    </h1>
+
+    <h2></h2>
 
     
     <div id="projects" class="container text-center mt-3 mb-5 pt-5">
