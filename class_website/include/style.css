@@ -9,6 +9,7 @@ body {
     background: rgb(220, 220, 220);
 }
 
+
 #btn-links {
     padding-left: 40px;
     padding-right: 40px;
@@ -36,3 +37,24 @@ body {
     width: 20rem;
     height: 100%;
 }
+
+
+
+
+
+/***This is used for styling the list of buttons inside of the w1 folder***/
+ul.button-list {
+    list-style-type: none; /* Removes the bullet points */
+    padding: 0; /* Removes the default padding */
+    margin: 0; /* Removes the default margin */
+  }
+  
+  ul.button-list li {
+    margin-bottom: 10px; /* Adds space between the buttons */
+  }
+  
+  button {
+    width: 100%; /* Makes the buttons fill the li */
+    /* Additional styling for your buttons goes here */
+  }
+  

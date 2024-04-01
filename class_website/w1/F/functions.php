@@ -11,7 +11,7 @@ function dd($data){
 function validAge($Age) {
 
     if ($Age >= 21) 
-        echo "Thanks, you may enter now.";
+        echo "Thanks, you may enter now. \n\n Drink Responsibly :)";
     
     else 
         echo "Sorry, you're not old enough";
