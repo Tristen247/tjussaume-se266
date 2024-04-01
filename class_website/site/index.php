@@ -18,7 +18,7 @@
                     <img src="../images/php_logo2.png" class="card-img-top" alt="php-logo">
                     <div class="card-body">
                       <h5 class="card-title">Week 1 - Mini Projects</h5>
-                      <p class="card-text">An Assortment of mini projects to review concepts learned throughout our degree and get comfortable with PHP syntax.</p>
+                      <p class="card-text">An assortment of mini projects</p>
                       <a href="../w1/index.php" class="btn btn-dark">View Project</a>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                     <img src="../images/php_logo2.png" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">Week 2 - PHP Home Page</h5>
-                      <p class="card-text">build a php project home page</p>
+                      <p class="card-text">Build a php project home page</p>
                       <a href="#" class="btn btn-dark">View Project</a>
                     </div>
                 </div>
