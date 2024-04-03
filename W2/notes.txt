@@ -1,0 +1,13 @@
+TO DO:
+
+-Add placeholders
+-fix Age() function as its not working correctly.
+-Add BMI Classification function and display to user.
+-Add/Fix Documentation 
+-style page
+-check all error messages 
+-further test validations. (Try to break them)
+
+
+Done: 
+-Style ERROR messages red and maybe move them to the bottom of the form 

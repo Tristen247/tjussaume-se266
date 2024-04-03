@@ -30,7 +30,7 @@
                     <div class="card-body">
                       <h5 class="card-title">Week 2 - PHP Home Page</h5>
                       <p class="card-text">Build a php project home page</p>
-                      <a href="#" class="btn btn-dark">View Project</a>
+                      <a href="" class="btn btn-dark">View Project</a>
                     </div>
                 </div>
             </div>
