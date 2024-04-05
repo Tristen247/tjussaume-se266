@@ -32,6 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     //validate birthday
+   
     if (!validateDate($_POST['b-date'])) {
         $errors['b-date'] = "ERROR: Invalid entry. Date must NOT be a future date."; //add to 'errors' array
     }
@@ -54,21 +55,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errors['weight'] = "Weight is required and must be a positive number."; //add to errors array
     }
 
+    //calculate the patients age:
+    $age = age($_POST['b-date']);
+
+    //Calculate patient BMI
+   
+    list($feet, $inches) = sscanf($_POST['height'], "%d'%d\""); // Assume $height is in the format "5' 10" 
+    //$bmi = calculateBMI($feet, $inches, $weight);
+    if (isset($feet) && isset($inches) && $weight) { // Make sure these variables are set
+        $bmi = calculateBMI($feet, $inches, $weight);
+    }
+
    
 
 //************************************************************************************************************
 // Logic for returning information to the user.
 
     if (empty($errors)) {
-        //calculate the patients age:
-        $age = age($_POST['b-date']);
-        //Calculate patient BMI
-        // Assume $height is a string in the format "5' 10""
-        list($feet, $inches) = sscanf($_POST['height'], "%d'%d\"");
-        //$bmi = calculateBMI($feet, $inches, $weight);
-        if (isset($feet) && isset($inches) && $weight) { // Make sure these variables are set
-            $bmi = calculateBMI($feet, $inches, $weight);
-        }
+       
         // If there are no errors, store the submitted data to display back to the user :D
         $_SESSION['submittedData'] = [
             'First Name' => $_POST['fName'],

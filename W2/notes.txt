@@ -1,7 +1,6 @@
 TO DO:
 
 -Add placeholders
--fix Age() function as its not working correctly.
 -Add BMI Classification function and display to user.
 -Add/Fix Documentation 
 -style page
@@ -11,3 +10,4 @@ TO DO:
 
 Done: 
 -Style ERROR messages red and maybe move them to the bottom of the form 
+-fix Age() function as its not working correctly. (Done 4/4/23)
