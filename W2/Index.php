@@ -83,6 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'Weight' => $_POST['weight'],
             'Age' => $age,
             'BMI' => $bmi
+            
         ];
 
         // Redirect to the same page to clear POST data ONLY.
