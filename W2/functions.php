@@ -19,7 +19,7 @@ function validateDate($date, $format = 'Y-m-d') {
     return $dateTime && $dateTime->format($format) === $date && $dateTime <= $currentDate;
 }
 
-// this function validates a height input uses a Regular expression to validate the ft/in format
+// This function validates a height input uses a Regular expression to validate the ft/in format
 function validateHeight($height) {
     if (preg_match('/^([0-9]+)\'\s*([0-9]+)"$/', $height, $matches)) {
         $feet = (int)$matches[1];
@@ -31,6 +31,7 @@ function validateHeight($height) {
     }
 }
 
+// This function validates weight and returns an error message based on the particular error
 function validateWeight($weight) {
     if (empty($weight)) {
         return "ERROR: Weight is required.";
@@ -42,9 +43,8 @@ function validateWeight($weight) {
     return ''; // No error
 }
 
-
-
 #calculating age based on DOB entered.
+# took this function from Prof. DRose's functions on Canvas.
 function age ($bdate) {
     $date = new DateTime($bdate);
     $now = new DateTime();
@@ -65,6 +65,18 @@ function calculateBMI($feet, $inches, $weight) {
         return round($bmi, 1); // Return the BMI rounded to 1 decimal place
     }    
     
+}
+
+function bmiClassification($BMI) {
+    if ($BMI <= 18.5){
+        return "Underweight";
+    } elseif ($BMI > 18.5 && $BMI <= 24.9){
+        return "Normal Weight";
+    } elseif ($BMI > 24.9 && $BMI <= 29.9) {
+        return "Overweight";
+    } else {
+        return "Obese";
+    }
 }
 
 ?>

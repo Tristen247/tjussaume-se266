@@ -50,12 +50,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    // Validate and process weight 
-    #$weight = $_POST['weight'] ?? null;
-    #if (empty($weight) || !is_numeric($weight) || $weight <= 0) {
-       # $errors['weight'] = "ERROR: Weight is required and must be a positive number."; //add to errors array
-    #} 
-
     $weightError = validateWeight($_POST['weight'] ?? null);
     if ($weightError) {
         $errors['weight'] = $weightError;
@@ -74,6 +68,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $bmi = calculateBMI($feet, $inches, $weight);
     }
 
+    $bmiDesc = bmiClassification($bmi);
+
    
 
 //************************************************************************************************************
@@ -90,7 +86,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'Height' => $_POST['height'],
             'Weight' => $_POST['weight'],
             'Age' => $age,
-            'BMI' => $bmi
+            'BMI' => $bmi,
+            'BMI Classification' => $bmiDesc
             
         ];
 
