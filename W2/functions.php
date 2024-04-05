@@ -1,6 +1,6 @@
 <?php
 
-#Validates the name inputs, checks for blanks and exeeding the max length.
+#Validates the name inputs,checks for blanks and exeeding the max length.
 function validateName($name, $maxLength) {
     if (empty($name)) {
         return 'ERROR: Patients first and last name are required.';
@@ -10,19 +10,7 @@ function validateName($name, $maxLength) {
     return '';
 }
 
-// this function validates a height input uses a Regular expression to validate the ft/in format
-function validateHeight($height) {
-    if (preg_match('/^([0-9]+)\'\s*([0-9]+)"$/', $height, $matches)) {
-        $feet = (int)$matches[1];
-        $inches = (int)$matches[2];
-
-        return ''; // Valid format
-    }else {
-        return 'ERROR: Height must be in ft/in format e.g., 5\' 10".';
-    }
-}
-
-#Checks if the date is valid and 
+#Valdating DOB entry.
 function validateDate($date, $format = 'Y-m-d') {
     $dateTime = DateTime::createFromFormat($format, $date);
     $currentDate = new DateTime();
@@ -31,6 +19,32 @@ function validateDate($date, $format = 'Y-m-d') {
     return $dateTime && $dateTime->format($format) === $date && $dateTime <= $currentDate;
 }
 
+// this function validates a height input uses a Regular expression to validate the ft/in format
+function validateHeight($height) {
+    if (preg_match('/^([0-9]+)\'\s*([0-9]+)"$/', $height, $matches)) {
+        $feet = (int)$matches[1];
+        $inches = (int)$matches[2];
+
+        return ''; // if Valid format return empty string.
+    }else {
+        return 'ERROR: Height must be in ft/in format e.g., 5\' 10".';
+    }
+}
+
+function validateWeight($weight) {
+    if (empty($weight)) {
+        return "ERROR: Weight is required.";
+    } elseif (!is_numeric($weight)) {
+        return "ERROR: Weight must be a number.";
+    } elseif ($weight <= 0) {
+        return "ERROR: Weight must be a positive number.";
+    }
+    return ''; // No error
+}
+
+
+
+#calculating age based on DOB entered.
 function age ($bdate) {
     $date = new DateTime($bdate);
     $now = new DateTime();
@@ -38,7 +52,7 @@ function age ($bdate) {
     return $interval->y;
 }
 
-#calculation patient BMI
+#calculation patient BMI.
 function calculateBMI($feet, $inches, $weight) {
     if ($feet == 0 || $inches == 0 || $weight == 0) {
         // Return some error or null because BMI cannot be calculated

@@ -5,7 +5,8 @@ require 'functions.php';
 
 //initiate errors array
 $errors = [];
-//initiate age and bmi variables
+//initiate weight, age, and bmi variables
+$weight = null;
 $age = null;
 $bmi = null;
 
@@ -49,10 +50,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    // Validate and process weight
-    $weight = $_POST['weight'] ?? null;
-    if (empty($weight) || !is_numeric($weight) || $weight <= 0) {
-        $errors['weight'] = "Weight is required and must be a positive number."; //add to errors array
+    // Validate and process weight 
+    #$weight = $_POST['weight'] ?? null;
+    #if (empty($weight) || !is_numeric($weight) || $weight <= 0) {
+       # $errors['weight'] = "ERROR: Weight is required and must be a positive number."; //add to errors array
+    #} 
+
+    $weightError = validateWeight($_POST['weight'] ?? null);
+    if ($weightError) {
+        $errors['weight'] = $weightError;
+    }  else {
+        $weight = $_POST['weight']; // If no errors, assign the weight for BMI calculation
     }
 
     //calculate the patients age:
