@@ -10,6 +10,14 @@ function validateName($name, $maxLength) {
     return '';
 }
 
+// function to check the value of a radio button.
+function validateRadioButton($fieldName) {
+    if (isset($_POST[$fieldName])) {
+        return $_POST[$fieldName];
+    }
+    return null;
+}
+
 #Valdating DOB entry.
 function validateDate($date, $format = 'Y-m-d') {
     $dateTime = DateTime::createFromFormat($format, $date);

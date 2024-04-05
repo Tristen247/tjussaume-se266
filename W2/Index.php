@@ -26,11 +26,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     //confirm that one of the radio buttons are checked
+    /*
     if (isset($_POST['married'])) {
         $married = $_POST['married'];
     } else {
         $errors['married'] = "ERROR: The user did not select a marital status."; //add to 'errors' array
+    }*/
+
+    $marriedStatus = validateRadioButton('married');
+    if ($marriedStatus === null) {
+        $errors['married'] = "ERROR: The user did not select a marital status.";
+    } else {
+        // If married status is set, you can do additional processing with it
     }
+
 
     //validate birthday
    
@@ -38,6 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errors['b-date'] = "ERROR: Invalid entry. Date must NOT be a future date."; //add to 'errors' array
     }
 
+    //Provide user feedback based on input and validate they're height.
     if (empty($_POST['height'])) {
         $errors['height'] = "Height is required.";
     } else {
@@ -50,6 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
+    //Validate Height
     $weightError = validateWeight($_POST['weight'] ?? null);
     if ($weightError) {
         $errors['weight'] = $weightError;
@@ -68,6 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $bmi = calculateBMI($feet, $inches, $weight);
     }
 
+    //Specify patient's bmi classification
     $bmiDesc = bmiClassification($bmi);
 
    
@@ -81,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['submittedData'] = [
             'First Name' => $_POST['fName'],
             'Last Name' => $_POST['lName'],
-            'Married' => $_POST['married'] ?? 'Not specified',
+            'Married' => $marriedStatus,
             'Date of Birth' => $_POST['b-date'],
             'Height' => $_POST['height'],
             'Weight' => $_POST['weight'],
