@@ -26,11 +26,11 @@
         
             <div class="col-lg-4 col-md-6 col-12 pb-5">
                 <div class="card">
-                    <img src="../images/php_logo2.png" class="card-img-top" alt="...">
+                    <img src="../images/php_logo2.png" class="card-img-top" alt="php-logo">
                     <div class="card-body">
-                      <h5 class="card-title">Week 2 - PHP Home Page</h5>
-                      <p class="card-text">Build a php project home page</p>
-                      <a href="" class="btn btn-dark">View Project</a>
+                      <h5 class="card-title">Week 2 - Patient Intake Form</h5>
+                      <p class="card-text">Build a patient intake form, calculate they're Age, BMI, And BMI classification. Then return the info to the user</p>
+                      <a href="../w2/index.php" class="btn btn-dark">View Project</a>
                     </div>
                 </div>
             </div>

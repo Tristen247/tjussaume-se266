@@ -25,14 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    //confirm that one of the radio buttons are checked
-    /*
-    if (isset($_POST['married'])) {
-        $married = $_POST['married'];
-    } else {
-        $errors['married'] = "ERROR: The user did not select a marital status."; //add to 'errors' array
-    }*/
-
     $marriedStatus = validateRadioButton('married');
     if ($marriedStatus === null) {
         $errors['married'] = "ERROR: The user did not select a marital status.";
@@ -42,14 +34,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
     //validate birthday
-   
     if (!validateDate($_POST['b-date'])) {
         $errors['b-date'] = "ERROR: Invalid entry. Date must NOT be a future date."; //add to 'errors' array
     }
 
     //Provide user feedback based on input and validate they're height.
     if (empty($_POST['height'])) {
-        $errors['height'] = "Height is required.";
+        $errors['height'] = "ERROR: Height is required.";
     } else {
         $heightError = validateHeight($_POST['height']);
         if ($heightError) {
@@ -72,7 +63,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $age = age($_POST['b-date']);
 
     //Calculate patient BMI
-   
     list($feet, $inches) = sscanf($_POST['height'], "%d'%d\""); // Assume $height is in the format "5' 10" 
     //$bmi = calculateBMI($feet, $inches, $weight);
     if (isset($feet) && isset($inches) && $weight) { // Make sure these variables are set
@@ -82,14 +72,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //Specify patient's bmi classification
     $bmiDesc = bmiClassification($bmi);
 
-   
-
 //************************************************************************************************************
 // Logic for returning information to the user.
 
     if (empty($errors)) {
        
-        // If there are no errors, store the submitted data to display back to the user :D
+        // If there are no errors, store the submitted data to display back to the user
         $_SESSION['submittedData'] = [
             'First Name' => $_POST['fName'],
             'Last Name' => $_POST['lName'],

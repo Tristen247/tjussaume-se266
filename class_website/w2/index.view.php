@@ -4,11 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>W2 patient Intake Form</title>
+    <title>w2 patient Intake Form - class site</title>
      <!--V5.3-->
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
     <style>
+        nav {
+            position: fixed;
+        }
         body{
             background-color: lightgrey;
         }
@@ -17,10 +20,20 @@
             color: red
         }
 
+        .navbar-brand {
+            margin-left: 15px;
+        }
+
         .page-title {
+            padding-top: 60px;
             margin-top: 20px;
             margin-left:75px;
             margin-bottom: 40px;
+        }
+
+        .home-btn {
+            margin-left: 700px;
+            padding-top: 100px;
         }
 
         .label {
@@ -29,11 +42,57 @@
 
         .submitted-data{
             margin-left: 75px;
+            position:absolute;
+            padding-bottom: 75px;
         }
+
+        .footer {
+            background-color: #0d6efd;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 16px;
+            color: white;
+        }
+
     </style>
 </head>
 <body>
-
+    <nav
+        class="navbar navbar-expand-sm navbar-light bg-primary fixed-top">
+        <a class="navbar-brand" href="..\">
+        <img src="../images/hosp-logo.png" width="45" height="45" alt="">
+        </a>
+        <button
+            class="navbar-toggler d-lg-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        ></button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active text-white" href="..\" aria-current="page">
+                        Home <span class="visually-hidden">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active text-white" href="https://github.com/Tristen247/tjussaume-se266/blob/f3c459fb263921fa19041689d84d9ef63435306e/class_website/w2/index.php" aria-current="page">
+                        GitHub<span class="visually-hidden">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
     <h1 class="page-title">Patient Intake Form</h1>
 
     <form method="post" name="patientIntake" action="<?php echo $_SERVER["PHP_SELF"];?>">
@@ -114,6 +173,11 @@
     unset($_SESSION['submittedData']);
     ?>
 <?php endif; ?>
+
+
+<footer class="footer">
+    <p>&copy; 2024 TJ Web Solutions. All rights reserved.</p>
+</footer>
 
     
 </body>
