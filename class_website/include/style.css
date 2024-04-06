@@ -9,16 +9,14 @@
 }
 
 body {
-    background-image: url(../images/code.jpeg);
+    background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url(../images/code.jpeg);
     background-size: cover; /* This will ensure the image covers the entire body */
     background-position: center; /* This centers the image in the page */
     background-repeat: no-repeat; /* This will prevent the image from tiling */
     background-attachment: fixed; /* This will make sure the image doesn't scroll with the page */
     padding: auto;
     margin-left:auto;
-
 }
-
 
 
 nav .social-icon{
@@ -41,8 +39,27 @@ nav .social-icon{
     color:white;
     padding-left: 20px;
 }
+.card {
+    background-color: rgb(0, 1, 12)
+}
 
+.card:hover {
+    transform: scale(1.05); /* Scales up the card to 105% of its original size */
+    transition: transform 0.3s ease-in-out; /* Animates the transformation */
+    box-shadow: 0 4px 8px rgba(15, 10, 162, 0.2); /* Adds a shadow effect */
+    transition: box-shadow 0.3s ease-in-out; /* Animates the shadow effect */
+    border-color: rgb(23, 96, 243); /* Change to your preferred color */
+    transition: border-color 0.5s ease-in-out; /* Animates the border color change */
+}
+
+.card-title {
+    color: white
+}
+.card-text {
+    color: white;
+}
 .card-body {
+    
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* This will push the button to the bottom */
