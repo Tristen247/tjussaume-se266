@@ -3,12 +3,29 @@
     margin: 0;
 }
 
-body {
-    padding: auto;
-    margin-left:auto;
-    background: rgb(220, 220, 220);
+.navbar-brand {
+    margin-left: 30px;
+    margin-right: 10px;
 }
 
+body {
+    background-image: url(../images/code.jpeg);
+    background-size: cover; /* This will ensure the image covers the entire body */
+    background-position: center; /* This centers the image in the page */
+    background-repeat: no-repeat; /* This will prevent the image from tiling */
+    background-attachment: fixed; /* This will make sure the image doesn't scroll with the page */
+    padding: auto;
+    margin-left:auto;
+
+}
+
+
+
+nav .social-icon{
+    display: inline-block;
+    margin: 0 10px; /* This gives 10px margin on left and right of each icon */
+    color: white; /* Change the color to white */
+}
 
 #btn-links {
     padding-left: 40px;
@@ -16,7 +33,12 @@ body {
     margin-left:4%;
 }
 
+#projects {
+    color:white;
+}
+
 .project-headings {
+    color:white;
     padding-left: 20px;
 }
 
@@ -37,6 +59,33 @@ body {
     width: 20rem;
     height: 100%;
 }
+
+.footer {
+    background-color: #050a0e;
+    text-align: center;
+    padding: 20px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: white;
+}
+
+.footer .social-icon {
+    display: inline-block;
+    margin: 0 10px; /* This gives 10px margin on left and right of each icon */
+    color: white; /* Change the color to white */
+    font-size: 24px; /* Adjust size as needed */
+}
+
+.footer .social-icon:hover {
+    color: #ddd; /* Slightly lighter color on hover for a visual effect */
+}
+
 
 
 

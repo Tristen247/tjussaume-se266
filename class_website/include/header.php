@@ -13,17 +13,19 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!--V5.3-->
+    <!--V5.3 JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!--My CSS-->
     <link href="../include/style.css" rel="stylesheet">
+    <!--Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#1c1c1c">
-<a class="navbar-brand" href="#">
-    <img src="../images/php_logo2.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-    PHP Portfolio
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color:#050a0e;">
+<a class="navbar-brand" href="..\">
+    <img src="../images/php_logo2.png" width="40" height="40" id="php-portfolio" class="d-inline-block align-top" alt="php-logo" loading="lazy">
+    
   </a>
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
         aria-expanded="false" aria-label="Toggle navigation"></button>
@@ -52,6 +54,11 @@
                 </div>
             </li>
         </ul>
+            <!--icons-->
+            <a href="your_facebook_link" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="your_twitter_link" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="your_instagram_link" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="your_github_profile_link" class="social-icon"><i class="fab fa-github"></i></a>
     </div>
 </nav>
 

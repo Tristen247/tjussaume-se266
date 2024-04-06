@@ -1,14 +1,11 @@
 <?php include __DIR__ . '/../include/header.php'; ?>
     
-    <h1 class="project-headings">PHP, MySQL, and More! From SE266
-    </h1>
 
-    <h2></h2>
-
+    
     
     <div id="projects" class="container text-center mt-3 mb-5 pt-5">
         <div class="post-heading text-center">
-            <h2 class="display-4 pt-5 font-weight-bold">Projects</h2>
+            <h1 class="display-4 pt-5 font-weight-bold">My PHP Projects</h1>
             <hr class="w-50 mx-auto pb-5">
         </div>
         
