@@ -1,0 +1,3 @@
+
+-add a contact forum (maybe an email open link)
+-add a header to the indexs page like a (breif greeting of some sort.)
