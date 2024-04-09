@@ -16,7 +16,7 @@
     {
         echo "I pressed the savings deposit button";
     } 
-     
+
 ?>
 
 <!DOCTYPE html>
@@ -64,6 +64,7 @@
               
                     
                     <div class="accountInner">
+                    
                         <input type="text" name="checkingWithdrawAmount" value="" />
                         <input type="submit" name="withdrawChecking" value="Withdraw" />
                     </div>
