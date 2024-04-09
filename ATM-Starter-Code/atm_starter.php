@@ -64,11 +64,17 @@
               
                     
                     <div class="accountInner">
+
+                    <?php
+                        getAccountDetails();
+                        
+                    ?>
                     
                         <input type="text" name="checkingWithdrawAmount" value="" />
                         <input type="submit" name="withdrawChecking" value="Withdraw" />
                     </div>
                     <div class="accountInner">
+
                         <input type="text" name="checkingDepositAmount" value="" />
                         <input type="submit" name="depositChecking" value="Deposit" /><br />
                     </div>

@@ -49,9 +49,9 @@ abstract class Account
 	// Display AccountID, Balance and StartDate in a nice format
 	protected function getAccountDetails()
 	{
-		$str = 'Account ID: ' . $this-> getAccountId() . "<br>";
-		$str = 'Balance: ' . $this-> getBalance() . "<br>";
-		$str = 'Account Opened' . $this-> getStartDate() . "<br>";
+		$str = 'Account ID: ' . $this->getAccountId() . "<br>";
+		$str .= 'Balance: $' . number_format($this->getBalance(), 2) . "<br>";
+		$str .= 'Account Opened: ' . $this->getStartDate() . "<br>";
 		return $str;
 		
 	} // end getAccountDetails
