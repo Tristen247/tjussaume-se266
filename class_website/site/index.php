@@ -37,8 +37,8 @@
                     <img src="../images/php_logo2.png" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">Week 3</h5>
-                      <p class="card-text"><Strong>Coming soon!</Strong></p>
-                      <a href="#" class="btn btn-dark">View Project</a>
+                      <p class="card-text"><Strong>Accounts</Strong></p>
+                      <a href="../w3/index.php" class="btn btn-dark">View Project</a>
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
                     <div class="card-body">
                       <h5 class="card-title">Week 4</h5>
                       <p class="card-text"><Strong>Coming soon!</Strong></p>
-                      <a href="#" class="btn btn-dark">View Project</a>
+                      <a href="../w4/patients.veiw.php" class="btn btn-dark">View Project</a>
                     </div>
                 </div>
             </div>

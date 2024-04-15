@@ -28,6 +28,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     //finish and repeat for savings account
 
+if($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['depositSavings']) && is_numeric($_POST['savingsDepositAmount'])) {
+        $savings->deposit((float)$_POST['savingsDepositeAmount']);
+    } elseif (isset($_POST['withdrawSavings']) && is_numeric($_POST['savingsWithdrawAmount'])) {
+        $savings->withdrawal((float)$_POST['checkingSavingsAmount']);
+    }
+
+}
+
     // After processing info, redirect back to atm_starter.php with updated values
     header('Location: atm_starter.php?' . http_build_query([
         'checkingAccountId' => $checking->getAccountId(),
