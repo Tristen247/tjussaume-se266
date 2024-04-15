@@ -6,18 +6,17 @@ class CheckingAccount extends Account
 {
 	const OVERDRAW_LIMIT = -200;
 
-	public function withdrawal($amount) 
-	{
-		
-		if($this-> balance - $amount >= self::OVERDRAW_LIMIT){
-			$this-> balance -= $amount; 
+	public function withdrawal($amount) {
+		if ($this->balance - $amount >= self::OVERDRAW_LIMIT) {
+			$this->balance -= $amount;
 			return true;
 		} else {
 			return false;
 		}
+	}
 
 		// write code here. Return true if withdrawal goes through; false otherwise
-	} // end withdrawal
+	 // end withdrawal
 
 	//freebie. I am giving you this code.
 	public function getAccountDetails() 

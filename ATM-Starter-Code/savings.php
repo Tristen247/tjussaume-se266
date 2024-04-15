@@ -1,15 +1,20 @@
 <?php
 
 require_once "./account.php";
- 
+
 class SavingsAccount extends Account 
 {
 
 	public function withdrawal($amount) 
 	{
-		if($this->balance <= $amount){
+		 // Check if there are sufficient funds for the withdrawal
+		 if ($this->balance >= $amount && $amount > 0) {
+			// Subtract the amount from the balance
+			$this->balance -= $amount;
+			// Return true to indicate the withdrawal was successful
 			return true;
 		} else {
+			// Return false if not enough funds or invalid input
 			return false;
 		}
 

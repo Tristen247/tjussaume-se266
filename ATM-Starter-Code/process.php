@@ -1,49 +1,74 @@
 <?php
+require_once "account.php";
 require_once "checking.php";
 require_once "savings.php";
 
-// initial values
-$initialCheckingId = 'C123';
-$initialCheckingBalance = 1000;
-$initialCheckingStartDate = '12-20-2019';
-$initialSavingsId = 'S123';
-$initialSavingsBalance = 5000;
-$initialSavingsStartDate = '03-20-2020';
-
-// Create the account objects 
-$checking = new CheckingAccount($_POST['checkingAccountId'] ?? $initialCheckingId, 
-                                $_POST['checkingAccountBalance'] ?? $initialCheckingBalance, 
-                                $_POST['checkingAccountStartDate'] ?? $initialCheckingStartDate);
-
-$savings = new SavingsAccount($_POST['savingsAccountId'] ?? $initialSavingsId, 
-                              $_POST['savingsAccountBalance'] ?? $initialSavingsBalance, 
-                              $_POST['savingsAccountStartDate'] ?? $initialSavingsStartDate);
-
-// Check if form was submitted
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['depositChecking']) && is_numeric($_POST['checkingDepositAmount'])) {
-        $checking->deposit((float)$_POST['checkingDepositAmount']);
-    } elseif (isset($_POST['withdrawChecking']) && is_numeric($_POST['checkingWithdrawAmount'])) {
-        $checking->withdrawal((float)$_POST['checkingWithdrawAmount']);
-    }
-    //finish and repeat for savings account
-
-if($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['depositSavings']) && is_numeric($_POST['savingsDepositAmount'])) {
-        $savings->deposit((float)$_POST['savingsDepositeAmount']);
-    } elseif (isset($_POST['withdrawSavings']) && is_numeric($_POST['savingsWithdrawAmount'])) {
-        $savings->withdrawal((float)$_POST['checkingSavingsAmount']);
-    }
-
+if (isset($_POST['checkingId'])){
+    //checking
+    $checkingAccountId = filter_input(INPUT_POST, 'checkingId', FILTER_SANITIZE_SPECIAL_CHARS);
+    $checkingBalance = filter_input(INPUT_POST, 'checkingBalance', FILTER_VALIDATE_FLOAT);
+    $checkingAccStartDate = filter_input(INPUT_POST, 'checkingAccStartDate', FILTER_SANITIZE_SPECIAL_CHARS);
+    
+    //Savings
+    $savingsAccountId = filter_input(INPUT_POST, 'savingsAccountId',  FILTER_SANITIZE_SPECIAL_CHARS);
+    $savingsBalance = filter_input(INPUT_POST, 'savingsBalance', FILTER_VALIDATE_FLOAT);
+    $savingsAccStartDate = filter_input(INPUT_POST, 'savingsAccStartDate',  FILTER_SANITIZE_SPECIAL_CHARS);
+}else{
+    $checkingAccountId = 'C123';
+    $checkingAccStartDate = '12-20-2019';
+    $checkingBalance = 1000;
+    $savingsAccountId = 'S123';
+    $savingAccStartDate = '03-20-2020';
+    $savingsBalance = 5000;
 }
 
-    // After processing info, redirect back to atm_starter.php with updated values
-    header('Location: atm_starter.php?' . http_build_query([
-        'checkingAccountId' => $checking->getAccountId(),
-        'checkingBalance' => $checking->getBalance(),
-        'checkingStartDate' => $checking->getStartDate(),
-        // Add savings account 
-    ]));
-    exit;
+$checking = new CheckingAccount ($checkingAccountId, $checkingBalance, $checkingAccStartDate);
+
+$savings = new SavingsAccount ($savingsAccountId, $savingsBalance, $savingsAccStartDate);
+
+
+
+if (isset ($_POST['withdrawChecking'])) 
+{
+    $withdrawAmount = filter_input(INPUT_POST, 'checkingWithdrawAmount', FILTER_VALIDATE_FLOAT);
+    if ($withdrawAmount !== false && $withdrawAmount > 0) {
+        $result = $checking->withdrawal($withdrawAmount);
+        if (!$result) {
+            echo "Withdrawal failed due to insufficient funds (overdraft limmit exceeded).";
+        }
+    } else {
+        echo "Invalid withdrawal amount.";
+    }
+} 
+else if (isset ($_POST['depositChecking'])) 
+{
+    $depositAmount = filter_input(INPUT_POST, 'checkingDepositAmount', FILTER_VALIDATE_FLOAT);
+    if ($depositAmount !== false && $depositAmount > 0) {
+        $checking->deposit ($depositAmount);
+    } else {
+        echo "Invalid deposit amount.";
+    }
+} 
+else if (isset ($_POST['withdrawSavings'])) 
+{
+    $withdrawAmount = filter_input(INPUT_POST, 'savingsWithdrawAmount', FILTER_VALIDATE_FLOAT);
+    $savingsBalance = $savings->getBalance(); // Obtain the current balance from the savings object
+
+    if ($withdrawAmount === false || $withdrawAmount <= 0) {
+        echo "Invalid withdrawal amount."; // Amount is negative number
+    } elseif ($withdrawAmount > $savingsBalance) {
+        echo "Withdrawal failed due to insufficient funds."; // Not enough balance
+    } else {
+        $savings->withdrawal($withdrawAmount); // else let them withdraw the amount requested
+    }
+}
+else if (isset ($_POST['depositSavings'])) 
+{
+    $depositAmount = filter_input(INPUT_POST, 'savingsDepositAmount', FILTER_VALIDATE_FLOAT);
+    if ($depositAmount !== false && $depositAmount > 0) {
+        $savings->deposit ($depositAmount);
+    } else {
+        echo "Invalid deposit amount.";
+    }
 }
 
