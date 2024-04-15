@@ -10,7 +10,7 @@
         </div>
         
         <div class="row">
-            <div class="col-lg-4 col-md-6 col-12 pb-5">
+            <div id="center-card" class="col-lg-4 col-md-6 col-12 pb-5">
                 <div class="card">
                     <img src="../images/php_logo2.png" class="card-img-top" alt="php-logo">
                     <div class="card-body">
@@ -21,7 +21,7 @@
                 </div>
             </div>
         
-            <div class="col-lg-4 col-md-6 col-12 pb-5">
+            <div id="center-card" class="col-lg-4 col-md-6 col-12 pb-5" >
                 <div class="card">
                     <img src="../images/php_logo2.png" class="card-img-top" alt="php-logo">
                     <div class="card-body">
@@ -32,7 +32,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-12 pb-5">
+            <div id="center-card" class="col-lg-4 col-md-6 col-12 pb-5">
                 <div class="card">
                     <img src="../images/php_logo2.png" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -43,7 +43,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-12 pb-5">
+            <div id="center-card" class="col-lg-4 col-md-6 col-12 pb-5">
                 <div class="card">
                     <img src="../images/php_logo2.png" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -54,7 +54,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-12 pb-5">
+            <div id="center-card" class="col-lg-4 col-md-6 col-12 pb-5">
                 <div class="card">
                     <img src="../images/php_logo2.png" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -65,7 +65,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-12 pb-5">
+            <div id="center-card" class="col-lg-4 col-md-6 col-12 pb-5">
                 <div class="card">
                     <img src="../images/php_logo2.png" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -76,7 +76,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-12 pb-5">
+            <div id="center-card" class="col-lg-4 col-md-6 col-12 pb-5">
                 <div class="card">
                     <img src="../images/php_logo2.png" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -87,7 +87,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-12 pb-5">
+            <div id="center-card" class="col-lg-4 col-md-6 col-12 pb-5">
                 <div class="card">
                     <img src="../images/php_logo2.png" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -98,7 +98,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-12 pb-5">
+            <div id="center-card" class="col-lg-4 col-md-6 col-12 pb-5">
                 <div class="card">
                     <img src="../images/php_logo2.png" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -109,7 +109,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-12 pb-5">
+            <div id="center-card" class="col-lg-4 col-md-6 col-12 pb-5">
                 <div class="card">
                     <img src="../images/php_logo2.png" class="card-img-top" alt="...">
                     <div class="card-body">

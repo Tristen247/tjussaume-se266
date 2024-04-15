@@ -1,5 +1,6 @@
 
 <?php
+/*
     if (isset ($_POST['withdrawChecking'])) 
     {
         echo "I pressed the checking withdrawal button";
@@ -16,7 +17,16 @@
     {
         echo "I pressed the savings deposit button";
     } 
+    */
+    require_once "checking.php";
+    require_once "savings.php";
+    require_once "process.php";
 
+    $checking = new CheckingAccount($_GET['checkingAccountId'], $_GET['checkingBalance'], $_GET['checkingStartDate']);
+    $savings = new SavingsAccount($_GET['savingsAccountId'], $_GET['savingsBalance'], $_GET['savingsStartDate']);
+?>
+
+  
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +39,7 @@
         body {
             margin-left: 120px;
             margin-top: 50px;
+            background: lightgray;
         }
        .wrapper {
             display: grid;
@@ -51,39 +62,37 @@
         .accountInner {
             margin-left:10px;margin-top:10px;
         }
+
     </style>
 </head>
 <body>
 
-    <form method="post">
+    <form method="post" action="atm_starter.php">
                
     <h1>ATM</h1>
         <div class="wrapper">
             
             <div class="account">
-              
-                    
-                    <div class="accountInner">
+                <div class="accountInner">
 
-                    <?php
-                        getAccountDetails();
+                    <?= $checking->getAccountDetails(); ?>
+                    <input type="hidden" name="checkingAccountId" value="<?= htmlspecialchars($checking->getAccountId()); ?>" />
+                    <input type="hidden" name="checkingAccountBalance" value="<?= htmlspecialchars($checking->getBalance()); ?>" />
+                    <input type="hidden" name="checkingAccountStartDate" value="<?= htmlspecialchars($checking->getStartDate()); ?>" />
+                    <!-- Repeat for savings account -->
+
                         
-                    ?>
-                    
-                        <input type="text" name="checkingWithdrawAmount" value="" />
-                        <input type="submit" name="withdrawChecking" value="Withdraw" />
-                    </div>
-                    <div class="accountInner">
-
-                        <input type="text" name="checkingDepositAmount" value="" />
-                        <input type="submit" name="depositChecking" value="Deposit" /><br />
-                    </div>
-            
+                    <input type="text" name="checkingWithdrawAmount" value="" />
+                    <input type="submit" name="withdrawChecking" value="Withdraw" />
+                </div>
+                <div class="accountInner">
+                    <input type="text" name="checkingDepositAmount" value="" />
+                    <input type="submit" name="depositChecking" value="Deposit" /><br />
+                </div>
+                
             </div>
 
             <div class="account">
-               
-                    
                     <div class="accountInner">
                         <input type="text" name="savingsWithdrawAmount" value="" />
                         <input type="submit" name="withdrawSavings" value="Withdraw" />
