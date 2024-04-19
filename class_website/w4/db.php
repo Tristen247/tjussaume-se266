@@ -7,4 +7,6 @@ $db = new PDO("mysql:host=" . $ini[''] .
               $ini['username'], 
               $ini['password']);
 
+              
+
 ?>
