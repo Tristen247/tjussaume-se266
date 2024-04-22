@@ -127,7 +127,6 @@
     ?>
 <?php endif; ?>
 
-
 <footer class="footer">
     <p>&copy; 2024 TJ Web Solutions. All rights reserved.</p>
     <p>Connect with us:</p>

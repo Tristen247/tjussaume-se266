@@ -1,0 +1,75 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+body{
+    background-color: lightgrey;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+}
+
+.errors{
+    color: red
+}
+nav {
+    position: fixed;
+}
+.navbar-brand {
+    margin-left: 15px;
+}
+
+nav .social-icon{
+    display: inline-block;
+    margin: 0 10px; /* This gives 10px margin on left and right of each icon */
+    color: white; /* Change the color to white */
+}
+.page-title {
+    padding-top: 70px;
+    margin-top: 20px;
+    margin-left:75px;
+    margin-bottom: 40px;
+}
+.under-title {
+    margin-left: 75px;
+}
+
+.home-btn {
+    margin-left: 700px;
+    padding-top: 100px;
+}
+
+.label {
+    font-weight: 400;
+}
+
+.footer {
+    background-color: #0d6efd;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer {
+    font-size: 16px;
+    color: white;
+}
+
+.footer .social-icon {
+    display: inline-block;
+    margin: 0 10px; /* This gives 10px margin on left and right of each icon */
+    color: white; /* Change the color to white */
+    font-size: 24px; /* Adjust size as needed */
+}
+
+.footer .social-icon:hover {
+    color: #ddd; /* Slightly lighter color on hover for a visual effect */
+}
