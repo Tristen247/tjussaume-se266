@@ -5,9 +5,7 @@ require 'model_patients.php';
 //initiate errors array
 $errors = [];
 $resultMessage = '';
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -151,13 +149,6 @@ $resultMessage = '';
             }
         }
         ?>
-
-        <!-- If there's a message, display that the patient was added 
-        /*<?php if ($resultMessage != ''): ?>
-            <div class="alert alert-success" role="alert">
-                <?= htmlspecialchars($resultMessage); ?>
-            </div> 
-        <?php endif; ?>********************-->
 
         <!-- Displaying error message from the errors Array *******************************-->
         <?php if (!empty($errors)): ?>
