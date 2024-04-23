@@ -36,9 +36,9 @@
                 <div class="card">
                     <img src="../images/php_logo2.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Week 3</h5>
-                      <p class="card-text"><Strong>Accounts</Strong></p>
-                      <a href="../w3/index.php" class="btn btn-dark">View Project</a>
+                      <h5 class="card-title">Week 3 - ATM Simulation Project</h5>
+                      <p class="card-text">Utilize 'Hidden Variables', an 'Abstract Class' and create functions to Simulate withdrawls and deposits on checking and savings accounts.</p>
+                      <a href="../ATM-Starter-Code/process.php" class="btn btn-dark">View Project</a>
                     </div>
                 </div>
             </div>
@@ -47,8 +47,8 @@
                 <div class="card">
                     <img src="../images/php_logo2.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Week 4</h5>
-                      <p class="card-text"><Strong>Patients CRUD Website</Strong></p>
+                      <h5 class="card-title">Week 4 - Patients CRUD Website</h5>
+                      <p class="card-text">Building on Week 2's project create a database connection, then create a webpage that retireves and displays all the patients in the database and connect the 'Patient Intake' form page to the DB to add Patients and direct the user back to the 'View Page' after successful submition</p>
                       <a href="../w4/patients.view.php" class="btn btn-dark">View Project</a>
                     </div>
                 </div>
