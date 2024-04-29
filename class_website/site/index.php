@@ -38,7 +38,7 @@
                     <div class="card-body">
                       <h5 class="card-title">Week 3 - ATM Simulation Project</h5>
                       <p class="card-text">Utilize 'Hidden Variables', an 'Abstract Class' and create functions to Simulate withdrawls and deposits on checking and savings accounts.</p>
-                      <a href="../ATM-Starter-Code/process.php" class="btn btn-dark">View Project</a>
+                      <a href="../w3/ATM-Starter-Code/atm_starter.php" class="btn btn-dark">View Project</a>
                     </div>
                 </div>
             </div>
