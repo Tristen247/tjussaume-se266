@@ -1,6 +1,6 @@
 <?php
 require 'functions.php';
-require '/model_patients.php';
+require 'models/model_patients.php';
 
 //initiate errors array
 $errors = [];

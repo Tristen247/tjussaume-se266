@@ -71,8 +71,8 @@
                 </div>
                 
                 <?php
-                    include __DIR__ . 'model/model_patients.php';
-
+                    include __DIR__ . '/models/model_patients.php';
+            
                     $pa = getPatients();
                 ?>
 
@@ -84,6 +84,7 @@
                             <th>Last Name</th>
                             <th>Marital Status</th>
                             <th>DOB</th>
+                            <th></th>
 
                         </tr>
                     </thead>
@@ -110,6 +111,9 @@
                                 </td>
                                 <td>
                                     <?= $p['patientBirthDate']; ?> 
+                                </td>
+                                <td>
+                                    <a href="edit_patient.php?action=Update&patientId=<?= $p['id']; ?>">Edit</a>
                                 </td>
                             </tr>
                         <?php endforeach ?>
