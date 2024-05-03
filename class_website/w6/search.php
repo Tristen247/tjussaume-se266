@@ -1,30 +1,23 @@
-
 <?php
 session_start();
-if (!isset($_SESSION['user'])) {
-    header('Location: login.php');
-    exit();
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-
-        <!-- Bootstrap V5.3-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap V5.3-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <!--Font awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
         <!--My CSS-->
         <link href="style.css" rel="stylesheet">
-    </head>
-    
-    <body>
-        <div class="wrapper">
+</head>
+<body>
+    <div class="wrapper">
             <main class="content">
-                <nav class="navbar navbar-expand-sm navbar-light bg-primary fixed-top">
+            <nav class="navbar navbar-expand-sm navbar-light bg-primary fixed-top">
                     <a class="navbar-brand" href="../site/index.php">
                     <img src="../images/hosp-logo.png" width="40" height="40" alt="">
                     </a>
@@ -48,18 +41,9 @@ if (!isset($_SESSION['user'])) {
                                     Patient Check-in <span class="visually-hidden">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active text-white" href="./search.php" aria-current="page">
-                                    Search Patient <span class="visually-hidden">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link active text-white" href="./logoff.php" aria-current="page">
                                     Log-Out <span class="visually-hidden">(current)</span></a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link active text-white" href="https://github.com/Tristen247/tjussaume-se266/blob/f3c459fb263921fa19041689d84d9ef63435306e/class_website/w2/index.php" aria-current="page">
-                                    GitHub<span class="visually-hidden">(current)</span></a>
-                            </li>
-                            
                         </ul>
                         <a href="your_facebook_link" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                         <a href="your_twitter_link" class="social-icon"><i class="fab fa-twitter"></i></a>
@@ -69,28 +53,66 @@ if (!isset($_SESSION['user'])) {
                 </nav>
                 <!--End Nav-->
                 <div>
-                    <br>
-                    <h1 class="page-title">PHP Urgent Care </h1>
-                    <br>
-                    <h2 class="under-title">Patient Log:</h2>
-                    <br>
-                    <h4 class="under-title"><?php
-                        $file = basename($_SERVER['PHP_SELF']);
-                        $mod_date=date("F d Y h:i:s A", filemtime($file));
-                        echo "Page last updated $mod_date ";
-                    ?></h4>
-                    <br>
+                    <h1 class="page-title">PHP Urgent Care</h1>
                 </div>
-                <div>
-                    <a href="add_patients.php">Add Patient</a>
-                    <a href="search.php">Search Patient</a>
-                </div>
+                
+
                 <?php
                     include __DIR__ . '/models/model_patients.php';
-            
-                    $pa = getPatients();
-                ?>
+                    // Initialize variables
+                    $fName = '';
+                    $lName = '';
+                    $married = '';
 
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                        $fName = $_POST['fName'] ?? '';
+                        $lName = $_POST['lName'] ?? '';
+                        $married = $_POST['married'] ?? '';
+                    
+                        
+                        $results = searchPatients($fName, $lName, $married);
+                    }
+                    
+                    
+                    
+                    $pa = searchPatients($fName,$lName,$married);
+                ?>
+                <div class="container">
+                    <h2>Patient Search:</h2>
+                    <form method="POST" name='search_patients'>
+                        <div>
+                            <div>
+                                <label>First Name:</label>
+                            </div>
+                            <div>
+                                <input type="text" name="fName" value="<?=$fName; ?>">
+                            </div>
+                            <div>
+                                <label>Last Name:</label>
+                            </div>
+                            <div>
+                            <input type="text" name="lName" value="<?=$lName; ?>">
+                            </div>
+                            <div>
+                            <label>Marital Status:</label>
+                            </div>
+                            <div>
+                                <select name="married">
+                                    <option value="">Any</option>
+                                    <option value="1">Married</option>
+                                    <option value="0">Single</option>
+                                </select>
+                            </div>
+                            <br>
+                            <div>
+                                <input type="submit" class="btn btn-primary" name="search" value="Search">
+                            </div>
+                            <br>
+                            
+                        </div>
+                    </form>
+                </div>
+                <a href="patients.view.php">View All Patients</a>
                 <table class="table">
                     <thead>
                         <tr>
@@ -148,6 +170,6 @@ if (!isset($_SESSION['user'])) {
                 <a href="your_instagram_link" class="social-icon"><i class="fab fa-instagram"></i></a>
                 <a href="your_github_profile_link" class="social-icon"><i class="fab fa-github"></i></a>
             </footer>
-        </div>
-    </body>
+    </div>
+</body>
 </html>

@@ -88,7 +88,7 @@ var_dump($pa);
                     <ul class="navbar-nav me-auto mt-2 mt-lg-0">
                         <li class="nav-item">
                             <a class="nav-link active text-white" href="./patients.view.php" aria-current="page">
-                                Home <span class="visually-hidden">(current)</span></a>
+                                View Patients <span class="visually-hidden">(current)</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active text-white" href="https://github.com/Tristen247/tjussaume-se266/blob/f3c459fb263921fa19041689d84d9ef63435306e/class_website/w2/index.php" aria-current="page">
@@ -149,7 +149,7 @@ var_dump($pa);
         </form>
 
         <?php
-        //if the page has been submitted then check/validate
+        //if the page has been submitted then validate
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
             $fields = [

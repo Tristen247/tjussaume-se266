@@ -42,7 +42,11 @@ $resultMessage = '';
                 <ul class="navbar-nav me-auto mt-2 mt-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active text-white" href="./patients.view.php" aria-current="page">
-                            Home <span class="visually-hidden">(current)</span></a>
+                            View Patients <span class="visually-hidden">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" href="./search.php" aria-current="page">
+                            Search Patient <span class="visually-hidden">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active text-white" href="https://github.com/Tristen247/tjussaume-se266/blob/f3c459fb263921fa19041689d84d9ef63435306e/class_website/w2/index.php" aria-current="page">
@@ -95,7 +99,7 @@ $resultMessage = '';
         </form>
 
         <?php
-            //if the page has been submitted them check/validate
+            //if the page has been submitted them validate
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
             $fields = [
@@ -130,10 +134,10 @@ $resultMessage = '';
                 $married = ($_POST['married'] == 'yes') ? 1 : 0;
                 $bDate = $_POST['b-date'];
                 
-                // Call the function to add the patient
+                // add the patient
                 $result = addPatient($fName, $lName, $married, $bDate);
                 
-                // Set the result message
+                //result message
                 if ($result) {
                     echo "<script>
                             alert('Patient added successfully!');

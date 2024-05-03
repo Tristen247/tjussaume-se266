@@ -45,6 +45,8 @@ function addPatient ($fName, $lName, $married, $bDate) {
 
 //var_dump($patients)
 
+
+//Week 5: -------------------------------------
 //Update the patients info:
 function updatePatient($id, $fName, $lName, $married, $bDate) {
     global $db;
@@ -122,7 +124,55 @@ function getPatient($id) {
     }
 }
 
+//Week 6: --------------------------------------------------
+function searchPatients($fName, $lName, $married, $orderby = 'id') {
+    global $db;  // Assume $db is a PDO instance
+    $sql = "SELECT * FROM patients WHERE 1=1";
+    $binds = [];
 
+    if (!empty($fName)) {
+        $sql .= " AND patientFirstName LIKE :fName"; 
+        $binds[':fName'] = '%' . $fName . '%';       
+    }
 
+    if (!empty($lName)) {
+        $sql .= " AND patientLastName LIKE :lName";  
+        $binds[':lName'] = '%' . $lName . '%';       
+    }
+
+    if ($married !== "") { // Check for an empty string to include or exclude the condition
+        $sql .= " AND patientMarried = :married";
+        $binds[':married'] = $married;
+    }
+
+    if (!empty($orderby)) {
+        $sql .= " ORDER BY " . $orderby;  
+    }
+
+    $stmt = $db->prepare($sql);
+    $results = [];
+    if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    return $results;
+}
+
+function login($user, $pass){
+    global $db;
+    $salt = "school-salt"; // salt used during password entry in the DB
+    $hashedPass = sha1($salt . $pass); // Apply the salt before hashing
+
+    $stmt = $db->prepare("SELECT * FROM users WHERE username=:user AND password=:pass");
+    $stmt->bindValue(':user', $user);
+    $stmt->bindValue(':pass', $hashedPass);
+   
+    if ($stmt->execute() && $stmt->rowCount() > 0) {
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result; // Login successful
+    }
+    
+    return []; // Login failed
+}
 
 ?>
