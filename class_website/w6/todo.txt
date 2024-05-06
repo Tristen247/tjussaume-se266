@@ -1,0 +1,1 @@
+-Use sha1(); for PW encrytion and add a 'salt'

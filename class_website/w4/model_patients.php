@@ -17,7 +17,6 @@ function GetPatients() {
 
     return ($results);
     
-
 }
 
 function addPatient ($fName, $lName, $married, $bDate) {
@@ -40,12 +39,10 @@ function addPatient ($fName, $lName, $married, $bDate) {
     return ($results);
 }
 
+
 //$results = addPatient('John', 'Doe', 1);
 //$patients = GetPatients();
-
-//var_dump($patients)
-
-
+//var_dump($patients);
 
 
 ?>

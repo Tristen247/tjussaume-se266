@@ -40,11 +40,29 @@ $password = ''; // Clear password after its been used
         <link href="style.css" rel="stylesheet">
 
         <style>
-            form {
-                display: flex;
-                position:absolute;
+          body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f3f2ef;
+        }
+        .login-form {
+            width: 100%;
+            max-width: 360px;
+            background-color: #fff;
+            margin-top: 160px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        .login-form h2 {
+            margin-bottom: 20px;
+        }
+        .login-form input[type="submit"] {
+            width: 100%;
+        }
 
-            }
         </style>
 </head>
 <body>
@@ -80,40 +98,29 @@ $password = ''; // Clear password after its been used
                 </div>
             </nav>
                 <!--End Nav-->
-            <h2 class="page-title">Login</h2>
-            <form name="login_form" method="post">
-                    <div class="container">
-                        <div class="label">
-                            <label>Username:</label>
-                        </div>
-                        <div>
-                            <input type="text" name="username" value="<?= htmlspecialchars($username); ?>" />
-                        </div>
-                        <div class="label">
-                            <label>Password:</label>
-                        </div>
-                        <div>
-                            <input type="password" name="password" />
-                        </div>
-                        <div>&nbsp;</div>
-                        <div>
-                            <input type="submit" class="btn btn-primary" name="login" value="Login" />
-                        </div>
+            <div class="login-form">
+                <h2 class="text-center">Sign in</h2>
+                <p class="text-center">Stay updated on your professional world</p>
+                <?= !empty($login_error) ? '<p class="text-danger">' . $login_error . '</p>' : '' ?>
+
+                <form name="login_form" method="post">
+                    <div class="form-group mb-3">
+                        <label for="username">Email or Phone</label>
+                        <input type="text" class="form-control" name="username" id="username" value="<?= htmlspecialchars($username); ?>" required>
                     </div>
-            </form>
+                    <div class="form-group mb-3">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" name="password" id="password" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="submit" class="btn btn-primary" name="login" value="Sign in">
+                    </div>
+                    <div class="text-center">
+                        <a href="password_recovery.php">Forgot password?</a>
+                    </div>
+                </form>
+            </div>
         </main>
-        <footer class="footer">
-            <p>&copy; 2024 TJ Web Solutions. All rights reserved.</p>
-            <p><?php $file = basename($_SERVER['PHP_SELF']);
-                    $mod_date=date("F d Y h:i:s A", filemtime($file));
-                    echo "Page last updated $mod_date ";
-                    ?></p>
-            <p>Connect with us:</p>
-            <a href="your_facebook_link" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-            <a href="your_twitter_link" class="social-icon"><i class="fab fa-twitter"></i></a>
-            <a href="your_instagram_link" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="your_github_profile_link" class="social-icon"><i class="fab fa-github"></i></a>
-        </footer>
     </div>
     
    
