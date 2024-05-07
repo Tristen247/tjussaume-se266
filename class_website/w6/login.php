@@ -63,6 +63,14 @@ $password = ''; // Clear password after its been used
             width: 100%;
         }
 
+        #sign-in {
+            font-size: 2.5rem;
+        }
+
+        #greeting {
+            font-size: 2rem;
+        }
+
         </style>
 </head>
 <body>
@@ -99,8 +107,8 @@ $password = ''; // Clear password after its been used
             </nav>
                 <!--End Nav-->
             <div class="login-form">
-                <h2 class="text-center">Sign in</h2>
-                <p class="text-center">Stay updated on your professional world</p>
+                <h2 id="sign-in" class="text-center">Sign in</h2>
+                <p id="greeting" class="text-center">PHP helping you help others.</p>
                 <?= !empty($login_error) ? '<p class="text-danger">' . $login_error . '</p>' : '' ?>
 
                 <form name="login_form" method="post">
