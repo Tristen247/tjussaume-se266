@@ -128,7 +128,9 @@ $password = ''; // Clear password after its been used
                     </div>
                 </form>
             </div>
+            
         </main>
+        
     </div>
     
    
