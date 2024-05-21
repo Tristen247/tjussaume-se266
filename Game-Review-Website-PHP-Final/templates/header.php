@@ -6,17 +6,18 @@
     <title>Document</title>
     <!-- Bootstrap V5.3-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <!--Font awesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-        <!--My CSS-->
-        <link href="./assets/style.css" rel="stylesheet">
+    <!--Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+      <!--My CSS-->
+      <link href="../style.css" rel="stylesheet">
+        
 </head>
 <body>
         <div class="wrapper">
             <main class="content">
                 <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
                     <a class="navbar-brand" href="index.php">
-                    <img src="../images/hosp-logo.png" width="40" height="40" alt="">
+                    <img src="../images/Video-Game-Controller-Icon.svg.png" width="40" height="40" alt="">
                     </a>
                     <button
                         class="navbar-toggler d-lg-none"
@@ -48,4 +49,4 @@
                         <a href="your_github_profile_link" class="social-icon"><i class="fab fa-github"></i></a>
                     </div>
                 </nav>
-            </main>
+            
