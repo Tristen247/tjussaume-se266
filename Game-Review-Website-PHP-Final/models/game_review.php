@@ -2,7 +2,6 @@
 
 include __DIR__ . '/db.php'; 
 
-// Function to get reviews for a specific game
 function GetReviewsByGameId($game_id) {
     global $db;
 
@@ -14,13 +13,13 @@ function GetReviewsByGameId($game_id) {
             game_reviews.review_text, 
             game_reviews.rating, 
             game_reviews.date_posted, 
-            gaming_users.username
+            users.username
         FROM 
             game_reviews
         JOIN 
             games ON game_reviews.game_id = games.game_id
         JOIN 
-            gaming_users ON game_reviews.user_id = gaming_users.user_id
+            users ON game_reviews.user_id = users.user_id
         WHERE 
             games.game_id = :game_id;"
     );
@@ -31,8 +30,10 @@ function GetReviewsByGameId($game_id) {
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    return ($results);
+    return $results;
 }
+
+
 
 //Admin Capabilty
 function AddReview($title, $genre, $releaseDate) {
@@ -55,6 +56,9 @@ function AddReview($title, $genre, $releaseDate) {
 
 }
 
+function EditReview(){
+
+}
 
 
 ?>

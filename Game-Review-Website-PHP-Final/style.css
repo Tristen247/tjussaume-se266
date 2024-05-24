@@ -1,4 +1,5 @@
 
+
 html, body {
     height: 100%;
     margin: 0;
@@ -33,7 +34,7 @@ nav {
 
 nav .social-icon{
     display: inline-block;
-    margin: 0 20px; /* This gives 10px margin on left and right of each icon */
+    margin: 0 12px; /* This gives 12px margin on left and right of each icon */
     padding: 10px;
     color: white; /* Change the color to white */
 }
@@ -75,5 +76,46 @@ nav .social-icon{
     color: #ddd; /* Slightly lighter color on hover for a visual effect */
 }
 
-/*login.php*/
+/*Reviews.php------------------------------------------------------------------------------*/
+.review {
+    margin-left: 75px;
+}
 
+
+
+/*Login.php*/
+    .login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f3f2ef;
+}
+.login-form {
+    width: 100%;
+    max-width: 360px;
+    background-color: #fff;
+    margin-top: 160px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.login-form h2 {
+    margin-bottom: 20px;
+}
+.login-form input[type="submit"] {
+    width: 100%;
+}
+
+#sign-in {
+    font-size: 2.5rem;
+}
+
+#greeting {
+    font-size: 2rem;
+}
+
+/* Ensure the navbar-dark bg-dark classes are correctly applied */
+.navbar.navbar-dark.bg-dark {
+    background-color: #000000 !important; /* Ensure background color is applied */
+}

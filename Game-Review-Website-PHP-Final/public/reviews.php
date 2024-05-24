@@ -1,6 +1,7 @@
 <?php
-include __DIR__ . '/db.php';
-include __DIR__ . '/game.php';  // Including the file where your functions are defined
+include __DIR__ . '/../templates/header.php';
+include __DIR__ . '/../models/db.php';
+include __DIR__ . '/../models/game_review.php';  // Including the file where your functions are defined
 
 // Get the game_id from the query parameter
 $game_id = isset($_GET['game_id']) ? (int)$_GET['game_id'] : 0;
@@ -19,25 +20,26 @@ if ($game_id > 0) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Reviews for <?php echo $game_title; ?></title>
-</head>
 <body>
-    <h1>Reviews for <?php echo $game_title; ?></h1>
+    
+<div class="container mt-5">
+    <h1 class="page-title">Reviews for <?php echo $game_title; ?></h1>
     <?php if (!empty($reviews)): ?>
         <?php foreach ($reviews as $review): ?>
-            <div class='review'>
-                <p><strong>User:</strong> <?php echo htmlspecialchars($review['username']); ?></p>
-                <p><strong>Rating:</strong> <?php echo htmlspecialchars($review['rating']); ?>/5</p>
-                <p><strong>Review:</strong> <?php echo htmlspecialchars($review['review_text']); ?></p>
-                <p><strong>Date Posted:</strong> <?php echo htmlspecialchars($review['date_posted']); ?></p>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Review by <?php echo htmlspecialchars($review['username']); ?></h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Rating: <?php echo htmlspecialchars($review['rating']); ?>/5</h6>
+                    <p class="card-text"><?php echo htmlspecialchars($review['review_text']); ?></p>
+                    <p class="card-text"><small class="text-muted">Posted on <?php echo htmlspecialchars($review['date_posted']); ?></small></p>
+                </div>
             </div>
         <?php endforeach; ?>
     <?php else: ?>
-        <p>No reviews found for this game.</p>
+        <p class="alert alert-warning">No reviews found for this game.</p>
     <?php endif; ?>
-</body>
-</html>
+</div>
+<?php include __DIR__ . '/../templates/footer.php';?>
+
+
+
