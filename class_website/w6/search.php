@@ -73,8 +73,6 @@ session_start();
                         $results = searchPatients($fName, $lName, $married);
                     }
                     
-                    
-                    
                     $pa = searchPatients($fName,$lName,$married);
                 ?>
                 <div class="container">

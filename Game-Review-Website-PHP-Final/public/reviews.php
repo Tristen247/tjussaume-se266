@@ -34,10 +34,17 @@ if ($game_id > 0) {
                     <p class="card-text"><small class="text-muted">Posted on <?php echo htmlspecialchars($review['date_posted']); ?></small></p>
                 </div>
             </div>
+            <hr>
         <?php endforeach; ?>
     <?php else: ?>
         <p class="alert alert-warning">No reviews found for this game.</p>
     <?php endif; ?>
+</div>
+<div>
+    <form class="container" action="index.php" method="get">
+            <button type="submit" class="btn btn-primary">back</button>
+            
+    </form>
 </div>
 <?php include __DIR__ . '/../templates/footer.php';?>
 

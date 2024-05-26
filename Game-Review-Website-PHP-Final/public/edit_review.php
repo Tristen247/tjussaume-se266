@@ -84,29 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['updateReview'])) {
     }
 }
 
-function GetReview($review_id) {
-    global $db;
-    $stmt = $db->prepare('SELECT gr.*, g.game_title FROM game_reviews gr JOIN games g ON gr.game_id = g.game_id WHERE gr.review_id = :review_id');
-    $stmt->bindParam(':review_id', $review_id, PDO::PARAM_INT);
-    $stmt->execute();
-    return $stmt->fetch(PDO::FETCH_ASSOC);
-}
 
-function UpdateReview($review_id, $review_text, $rating) {
-    global $db;
-    $stmt = $db->prepare('UPDATE game_reviews SET review_text = :review_text, rating = :rating WHERE review_id = :review_id');
-    $stmt->bindParam(':review_text', $review_text, PDO::PARAM_STR);
-    $stmt->bindParam(':rating', $rating, PDO::PARAM_INT);
-    $stmt->bindParam(':review_id', $review_id, PDO::PARAM_INT);
-    return $stmt->execute();
-}
-
-function DeleteReview($review_id) {
-    global $db;
-    $stmt = $db->prepare('DELETE FROM game_reviews WHERE review_id = :review_id');
-    $stmt->bindParam(':review_id', $review_id, PDO::PARAM_INT);
-    return $stmt->execute();
-}
 ?>
 
 <!DOCTYPE html>
