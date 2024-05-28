@@ -18,8 +18,8 @@ $games = GetGames();
 
 .card-img-top {
     width: 100%;
-    height: 22rem; /* Set a fixed height for images */
-    object-fit: cover; /* Ensure images cover the entire area without distortion */
+    height: 19rem; /* Set a fixed height for images */
+    object-fit:fill; /* Ensure images cover the entire area without distortion */
 }
 
 .card-body {
@@ -31,7 +31,7 @@ $games = GetGames();
 }
 
 .carousel-item img {
-    height: 400px; /* Set a fixed height for carousel images */
+    height:fit-content; /* Set a fixed height for carousel images */
     object-fit: cover; /* Ensure images cover the entire area without distortion */
 }
 </style>

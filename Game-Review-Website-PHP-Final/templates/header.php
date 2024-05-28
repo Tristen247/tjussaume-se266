@@ -35,7 +35,7 @@ session_start();
                 <div class="collapse navbar-collapse" id="collapsibleNavId">
                     <ul class="navbar-nav me-auto mt-2 mt-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active text-white" href="index.php" aria-current="page">
+                            <a class="nav-link active text-white" href="./index.php" aria-current="page">
                                 Home <span class="visually-hidden">(current)</span>
                             </a>
                         </li>
@@ -63,8 +63,8 @@ session_start();
                             </li>
                         <?php endif; ?>
                         <li class="nav-item">
-                            <a class="nav-link active text-white" href="https://github.com/Tristen247/tjussaume-se266/blob/f3c459fb263921fa19041689d84d9ef63435306e/class_website/w2/index.php" aria-current="page">
-                                GitHub <span class="visually-hidden">(current)</span>
+                            <a class="nav-link active text-white" href="./admin_dashboard.php" aria-current="page">
+                                Admin <span class="visually-hidden">(current)</span>
                             </a>
                         </li>
                     </ul>

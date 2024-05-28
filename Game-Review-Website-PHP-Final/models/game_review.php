@@ -33,17 +33,6 @@ function GetReviewsByGameId($game_id) {
     return $results;
 }
 
-//fucntion for getting review by id for update and deleting functionallity
-function GetReview($review_id) {
-    global $db;
-    $stmt = $db->prepare('SELECT gr.*, g.game_title FROM game_reviews gr JOIN games g ON gr.game_id = g.game_id WHERE gr.review_id = :review_id');
-    $stmt->bindParam(':review_id', $review_id, PDO::PARAM_INT);
-    $stmt->execute();
-    return $stmt->fetch(PDO::FETCH_ASSOC);
-}
-
-
-
 // Function to add a game review
 function AddGameReview($game_id, $user_id, $review_text, $rating) {
     global $db;
@@ -64,6 +53,15 @@ function AddGameReview($game_id, $user_id, $review_text, $rating) {
     return $stmt->execute();
 }
 
+
+//fucntion for getting review by id for update and deleting functionallity
+function GetReview($review_id) {
+    global $db;
+    $stmt = $db->prepare('SELECT gr.*, g.game_title FROM game_reviews gr JOIN games g ON gr.game_id = g.game_id WHERE gr.review_id = :review_id');
+    $stmt->bindParam(':review_id', $review_id, PDO::PARAM_INT);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
 
 function UpdateReview($review_id, $review_text, $rating) {
     global $db;

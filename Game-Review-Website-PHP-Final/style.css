@@ -19,6 +19,15 @@ body{
     flex: 1;
 }
 
+.card:hover {
+    transform: scale(1.03); /* Scales the card to 103% of its original size */
+    transition: transform 0.3s ease-in-out; /* Animates the transformation */
+    box-shadow: 0 4px 8px rgba(202, 200, 239, 0.2); /* Adds a shadow effect */
+    transition: box-shadow 0.3s ease-in-out; /* Animates the shadow effect */
+    border-color: rgb(23, 96, 243); /* highlight color */
+    transition: border-color 0.5s ease-in-out; /* Animates the border color change */
+}
+
 .errors{
     color: red
 }
@@ -59,14 +68,18 @@ nav .social-icon{
 
 .footer {
     background-color: #000000;
+    
+    margin-top: 60vh;
     text-align: center;
     padding: 20px;
     font-size: 16px;
     color: white;
+
 }
 
 .footer .social-icon {
     display: inline-block;
+    
     margin: 0 10px; /* This gives 10px margin on left and right of each icon */
     color: white; /* Change the color to white */
     font-size: 24px; /* Adjust size as needed */

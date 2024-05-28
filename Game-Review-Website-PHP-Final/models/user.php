@@ -51,4 +51,55 @@ function GetReviewsByUserId($user_id) {
     return $results;
 }
 
+function GetAllUsers() {
+    global $db;
+    $stmt = $db->prepare('SELECT * FROM gaming_users');
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function GetUser($user_id) {
+    global $db;
+    $stmt = $db->prepare('SELECT * FROM users WHERE user_id = :user_id');
+    $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+function UpdateUser($user_id, $username, $email, $password = null, $is_admin) {
+    global $db;
+    
+    $sql = 'UPDATE gaming_users SET username = :username, email = :email';
+    if ($password !== null) {
+        $sql .= ', password = :password';
+    }
+    if ($is_admin !== null) {
+        $sql .= ', is_admin = :is_admin';
+    }
+    $sql .= ' WHERE user_id = :user_id';
+    
+    $stmt = $db->prepare($sql);
+    $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+    $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+    if ($password !== null) {
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        $stmt->bindParam(':password', $hashed_password, PDO::PARAM_STR);
+    }
+    if ($is_admin !== null) {
+        $stmt->bindParam(':is_admin', $is_admin, PDO::PARAM_INT);
+    }
+    $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+
+    return $stmt->execute();
+}
+
+
+function DeleteUser($user_id) {
+    global $db;
+    $stmt = $db->prepare('DELETE FROM gaming_users WHERE user_id = :user_id');
+    $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+
+    return $stmt->execute();
+}
+
 ?>
